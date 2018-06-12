@@ -1,0 +1,12 @@
+
+{% block content %}
+<h3>{{ img.name }}</h3>
+
+{% if img.img %}
+  <P><img src="{{img.img.url}}"/></P>
+{% endif %}
+
+<p>date:{{ picture.date_added|date:'Y-m-j' }}</p>
+<p><a href="{% url 'picture_unloads:showall' %}">all the picture</a></p>
+  <a href="{% url 'picture_unloads:upload'%}">new</a>
+{% endblock %}

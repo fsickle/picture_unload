@@ -1,0 +1,14 @@
+{% block content %}
+<h3>picture list</h3>
+<ul>
+{% if latest_picture_list %}
+  {% for picture in latest_picture_list %}
+  <li><a href="{% url 'picture_unloads:show' picture.id %}">{{ picture.name }}</a>
+    -{{ picture.date_added|date:'Y-m-j' }}</li>
+  {% endfor %}
+{% else %}
+  <li>there is no picture</li>
+{% endif %}
+</ul>
+<p><a href="{% url 'picture_unloads:upload' %}">new photo</a></p>
+{% endblock %}
